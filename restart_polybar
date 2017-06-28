@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pkill polybar
+sleep 1 
+~/bin/wal -i "$(< "${HOME}/.cache/wal/wal")" 
+sleep 1
+$HOME/.config/polybar/launch.sh & 

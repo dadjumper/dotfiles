@@ -1,0 +1,334 @@
+;-------------------------------------------------
+;                                                ;
+;           Polybar config for my themes         ;
+; 				                 ;
+;                                                ;
+;-------------------------------------------------
+
+
+[colors]
+;My colors are set from .Xresources to match everything else
+my_background 	= ${xrdb:background}
+my_foreground 	= ${xrdb:foreground}
+my_color0	= ${xrdb:color0}
+my_color1	= ${xrdb:color3}
+my_color2	= ${xrdb:color2}
+my_color3	= ${xrdb:color1}
+my_color4	= ${xrdb:color4}
+my_color5	= ${xrdb:color5}
+my_color6	= ${xrdb:color6}
+my_color7	= ${xrdb:color7}
+my_color8	= ${xrdb:color8}
+my_color9	= ${xrdb:color9}
+my_color10	= ${xrdb:color10}
+my_color11	= ${xrdb:color11}
+my_color12	= ${xrdb:color12}
+my_color13	= ${xrdb:color13}
+my_color14	= ${xrdb:color14}
+my_color15	= ${xrdb:color15}
+
+[bar/bar1]
+;monitor = ${env:MONITOR:HDMI-1}
+;monitor = ${env:MONITOR:eDP1}
+bottom = false
+;width = 90%
+width = 100%
+height = 20
+;offset-x = 5%
+;offset-y = 1%
+offset-x = 0
+offset-y = 0
+radius = 0.0
+fixed-center = true
+
+
+background = ${colors.my_background}
+;foreground = ${colors.my_foreground}
+foreground =  ${colors.my_foreground}
+
+line-size = 4
+line-color = ${colors.my_color4}
+
+border-size = 0
+border-color = ${colors.my_color4}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "Misc Fixed:size=12;0"
+font-1 = "Misc Fixed:size=12;0"
+font-2 = "Misc Fixed:size=12;0"
+font-3 = "Noto Sans:size=12;0"
+font-4 = "FontAwesome:size=12;0"
+
+modules-left = i3
+modules-center = xwindow 
+modules-right = volume battery date
+
+tray-position = right
+tray-padding = 9
+tray-transparent = false
+tray-offset-y = 0%
+tray-offset-x = 0%
+tray-maxsize = 18
+tray-detached = false
+tray-background = ${colors.my_background}
+#tray-underline = ${colors.my_color4}
+
+;wm-restack = bspwm
+wm-restack = i3
+
+;override-redirect = true
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+
+[module/i3]
+type = internal/i3
+;
+;strip-wsnumbers = true
+;
+;label-focused-padding = 3
+;label-unfocused-padding = 3
+;
+;label-focused-background = ${colors.background-alt}
+label-unfocused-background = ${colors.my_background}
+label-unfocused-foreground = ${colors.my_foreground}
+;label-unfocused-underline = ${colors.my_foreground}
+;
+;label-mode-padding = 0
+;label-mode-background = ${colors.background-unf}
+;
+;label-visible-underline = ${colors.my_background}
+;label-visible-padding = 4
+
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = ${colors.my_color4}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused = %index%
+;label-focused-foreground = ${colors.my_foreground}
+label-focused-foreground = ${colors.my_foreground}
+label-focused-background = ${colors.my_background}
+label-focused-underline = ${colors.my_color10}
+label-focused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-visible = %index%
+label-visible-underline = ${colors.my_foreground}
+label-visible-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-urgent = %index%
+label-urgent-foreground = ${colors.my_foreground}
+label-urgent-background = ${colors.my_background}
+label-urgent-underline = ${colors.my_color8}
+label-urgent-padding = 2
+
+
+;[module/wlan]
+;type = internal/network
+;interface = wlp3s0
+;interval = 3.0
+
+;format-connected-background = ${colors.my_background}
+;format-connected = "<ramp-signal><label-connected>"
+;format-connected-underline = #9f78e1
+;label-connected =
+
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.my_foreground}
+
+;ramp-signal-0 = 1
+;ramp-signal-1 = 2
+;ramp-signal-2 = 3
+;ramp-signal-3 = 4
+;ramp-signal-4 = 5
+;ramp-signal-foreground = ${colors.my_foreground}
+
+
+;[module/eth]
+;type = internal/network
+;interface = enp0s25
+;interval = 3.0
+;
+;format-connected-underline = #55aa55
+;format-connected-prefix = ""
+;format-connected-prefix-foreground = ${colors.foreground-alt}
+;label-connected = %local_ip%
+;
+;format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %a, %b %d"
+
+time = " %I:%M %p "
+
+time-alt =" %I:%M %p "
+
+format-prefix-foreground = ${colors.my_foreground}
+format-underline = ${colors.my_color4}
+
+label = %date% %time%
+
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 99
+
+;format-full-background = ${colors.my_color4}
+;format-full-background = ${colors.my_background}
+;format-charging-background = ${colors.my_background}
+format-charging =⁣ <label-charging> 
+format-charging-underline = ${colors.my_color7}
+;format-discharging-background = ${colors.my_color4}
+;format-discharging-background = ${colors.my_background}
+format-discharging =⁣ <label-discharging>
+format-discharging-underline = ${colors.my_color1}
+
+;format-full-prefix-foreground = ${colors.my_color4}
+;format-full-prefix-foreground = ${colors.my_background}
+format-full-underline = ${colors.my_color3}
+
+;format-charging-background = ${colors.my_background}
+
+;ramp-capacity-0 = 
+;ramp-capacity-1 = 
+;ramp-capacity-2 = 
+;ramp-capacity-3 = 
+;ramp-capacity-4 = 
+;ramp-capacity-foreground = ${colors.my_foreground}
+;ramp-capacity-foreground = ${colors.my_background}
+;ramp-capacity-foreground = ${colors.my_foreground}
+
+;animation-charging-0 = 
+;animation-charging-1 = 
+;animation-charging-2 = 
+;animation-charging-3 = 
+;animation-charging-4 = 
+;animation-charging-foreground = ${colors.my_foreground}
+;animation-charging-foreground = ${colors.my_background}
+;animation-charging-foreground = ${colors.my_foreground}
+;animation-charging-framerate = 750
+
+
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+
+; 
+; [module/xkeyboard]
+; type = internal/xkeyboard
+; blacklist-0 = num lock
+; 
+; format-prefix = " "
+; format-prefix-foreground = ${colors.foreground-alt}
+; format-prefix-underline = ${colors.secondary}
+; 
+; label-layout = %layout%
+; label-layout-underline = ${colors.secondary}
+; 
+; label-indicator-padding = 2
+; label-indicator-margin = 1
+; label-indicator-background = ${colors.secondary}
+; label-indicator-underline = ${colors.secondary}
+; 
+ 
+
+
+
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-padding = 10
+label-maxlen = 70
+;label-underline = ${colors.my_color7}
+label-foreground = ${colors.my_color5}
+;label-foreground = ${colors.my_color7}
+
+[module/volume]
+type = internal/volume
+
+format-volume = <bar-volume>
+label-volume =  
+label-volume-foreground = ${colors.my_foreground}
+
+format-muted-suffix = "  "
+format-muted-foreground = ${colors.my_foreground}
+label-muted = muted
+format-volume-suffix = "  "
+
+
+bar-volume-width = 8
+bar-volume-foreground-0 = ${colors.my_color1}
+bar-volume-foreground-1 = ${colors.my_color1} 
+bar-volume-foreground-2 = ${colors.my_color1}
+bar-volume-foreground-3 = ${colors.my_color1}
+bar-volume-foreground-4 = ${colors.my_color1}
+bar-volume-foreground-5 = ${colors.my_color2}
+bar-volume-foreground-6 = ${colors.my_color3}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.my_foreground}
+;format-volume-underline = ${colors.my_color3}
+}
+
