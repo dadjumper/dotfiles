@@ -1,7 +1,7 @@
 @import url("file:///home/ryan/.cache/wal/firefox.css");
 html {
     color: var(--color0);
-    font-family: 'Misc Fixed', monospace;
+    font-family: 'lucy tewi', monospace;
     background-color: var(--color2);
 }
 
@@ -17,7 +17,7 @@ a {
 }
 
 a.link {
-    font-size: 11px;
+    font-size: 10px;
     line-height: 65px;
     background-color: var(--color2);
     transition: ease-in-out 0.15s;
@@ -45,13 +45,14 @@ img.hey {
 }
 
 p.link-cats {
-    font-size: 16px;
+    font-size: 10px;
     font-weight: bold;
     margin-bottom: 0px;
     padding: 10px;
     padding-left: 10px;
     padding-right: 10px;
     color: var(--color7)
+
 }
 
 #body-block {
