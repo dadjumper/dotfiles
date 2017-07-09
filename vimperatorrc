@@ -13,8 +13,6 @@ cnoremap <CR> <CR>:js toggle_bottombar('off')<CR>
 cnoremap <Esc> <Esc>:js toggle_bottombar('off')<CR>
 noremap gg <Home>
 noremap gG <End>
-noremap N <PageDown>
-noremap M <PageUp>
 noremap D u<CR>
 
 set! javascript.options.jit.chrome=true

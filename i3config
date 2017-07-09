@@ -167,6 +167,7 @@ bindsym $mod+r mode "resize"
 #}
 
 bindsym Print exec scrot
+bindsym $mod+Print exec --no-startup-id ~/scripts/scrotsel
 bindsym Pause exec scrot -s 
 bindcode 122 exec amixer sset PCM 2- && exec amixer sset Master 5-
 bindcode 123 exec amixer sset PCM 2+ && exec amixer sset Master 5+
