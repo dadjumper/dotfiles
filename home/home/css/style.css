@@ -1,0 +1,81 @@
+@import url("file:///home/ryan/.cache/wal/firefox.css");
+html {
+    color: var(--color0);
+    font-family: 'lucy tewi', monospace;
+    background-color: var(--color2);
+}
+
+
+body {
+    margin: auto;
+    width: 58em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.link {
+    font-size: 10px;
+    line-height: 65px;
+    background-color: var(--color2);
+    transition: ease-in-out 0.15s;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 0px solid var(--color5);
+}
+
+a.link:hover {
+    background-color: var(--color0);
+    color: var(--color5);
+    border-radius: 1px;
+    border-bottom: 7px solid;
+    border-top: 7px solid;
+}
+
+img.hey {
+  width: 120%;
+  background-color: var(--color0);
+  padding: 33px;
+}
+
+p.link-cats {
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--color7)
+
+}
+
+#body-block {
+  /*margin-top: 3.5em;
+  margin-bottom: 3.5em;
+  margin-left: 3.5em;
+  margin-right:3.5em;*/
+  margin: auto;
+  padding: 70px;
+  width: 70%;
+  overflow: hidden;
+}
+
+#image {
+  width: 300px;
+  float: left;
+  margin-right: 145px;
+  background-color: var(--color0);
+}
+
+#links {
+  float: left;
+  padding: 25px;
+  padding-top: 10px;
+  background-color: var(--color0);
+}
